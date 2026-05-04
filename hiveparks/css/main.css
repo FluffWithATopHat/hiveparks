@@ -1026,7 +1026,7 @@ p:last-child { margin-bottom: 0; }
 
 .membership-card.featured {
   border-color: rgba(255,214,0,0.4);
-  background: linear-height 135deg, #1e1e25, #232330;
+  background: linear-gradient(135deg, #1e1e25, #232330);
 }
 
 .membership-card:hover,
