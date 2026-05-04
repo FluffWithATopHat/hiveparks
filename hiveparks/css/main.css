@@ -559,11 +559,9 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid rgba(255,214,0,0.18);
   border-radius: var(--radius);
   min-width: 190px;
-  padding: 0.5rem 0;
-  padding-top: 0.75rem;
+  padding: 0.75rem 0 0.5rem;
   box-shadow: var(--shadow);
   z-index: 100;
-  margin-top: 0;
 }
 
 /* Invisible bridge closes the gap so the menu doesn't vanish on hover */
