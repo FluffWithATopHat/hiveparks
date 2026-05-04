@@ -365,10 +365,113 @@ p:last-child { margin-bottom: 0; }
   to { transform: scale(4); opacity: 0; }
 }
 
-/* ----- NAVBAR ----- */
-.navbar {
+/* ----- LOCATION BAR ----- */
+.location-bar {
+  background: rgba(10, 10, 12, 0.98);
+  border-bottom: 1px solid rgba(255,214,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  height: 34px;
+  font-size: 0.72rem;
+  font-family: var(--font);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
   position: sticky;
   top: 0;
+  z-index: 1001;
+}
+
+.location-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.location-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.location-dropdown-wrap {
+  position: relative;
+}
+
+.location-change-btn {
+  background: rgba(255,214,0,0.12);
+  border: 1px solid rgba(255,214,0,0.3);
+  color: var(--accent);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.location-change-btn:hover {
+  background: rgba(255,214,0,0.22);
+  border-color: var(--accent);
+}
+
+.location-picker {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--bg2);
+  border: 1px solid rgba(255,214,0,0.2);
+  border-radius: 10px;
+  min-width: 180px;
+  padding: 0.4rem 0;
+  box-shadow: var(--shadow);
+  z-index: 2000;
+}
+
+.location-picker.open {
+  display: block;
+}
+
+.location-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.location-picker-item:hover {
+  background: rgba(255,214,0,0.1);
+  color: var(--accent);
+}
+
+.location-picker-item.current {
+  color: var(--accent);
+}
+
+.location-picker-item.current::after {
+  content: '✓';
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+/* adjust navbar sticky so it sits below the location bar */
+.navbar {
+  top: 34px;
+  position: sticky;
   z-index: 1000;
   background: rgba(18, 18, 21, 0.95);
   backdrop-filter: blur(12px);
@@ -399,6 +502,12 @@ p:last-child { margin-bottom: 0; }
 }
 
 .logo-text br { display: block; }
+
+.navbar-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 .nav-links {
   display: flex;
@@ -444,15 +553,27 @@ p:last-child { margin-bottom: 0; }
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   right: 0;
   background: var(--bg2);
   border: 1px solid rgba(255,214,0,0.18);
   border-radius: var(--radius);
   min-width: 190px;
   padding: 0.5rem 0;
+  padding-top: 0.75rem;
   box-shadow: var(--shadow);
   z-index: 100;
+  margin-top: 0;
+}
+
+/* Invisible bridge closes the gap so the menu doesn't vanish on hover */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .dropdown-item {
@@ -1755,7 +1876,10 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 768px) {
   :root { --nav-height: 64px; }
 
+  .location-bar { padding: 0 1.25rem; }
+
   .navbar {
+    top: 34px;
     padding: 0 1.25rem;
     flex-wrap: wrap;
     height: auto;
