@@ -2,6 +2,23 @@
 $(function () {
 
   /* ─────────────────────────────────────────────
+     0. LOCATION PICKER (mini top bar)
+  ───────────────────────────────────────────── */
+  var $locBtn    = $('.location-change-btn');
+  var $locPicker = $('.location-picker');
+
+  $locBtn.on('click', function (e) {
+    e.stopPropagation();
+    $locPicker.toggleClass('open');
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.location-dropdown-wrap').length) {
+      $locPicker.removeClass('open');
+    }
+  });
+
+  /* ─────────────────────────────────────────────
      1. HAMBURGER MENU TOGGLE
   ───────────────────────────────────────────── */
   var $hamburger = $('#hamburger');
