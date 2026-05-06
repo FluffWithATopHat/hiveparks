@@ -1226,12 +1226,12 @@ p:last-child { margin-bottom: 0; }
 .attraction-card:nth-child(4)  { background-image: linear-gradient(135deg, #1a0d2a 0%, #0d051a 100%); }
 .attraction-card:nth-child(5)  { background-image: linear-gradient(135deg, #0d2a2a 0%, #051a1a 100%); }
 .attraction-card:nth-child(6)  { background-image: linear-gradient(135deg, #2a1a1a 0%, #1a0d0d 100%); }
-.attraction-card:nth-child(7)  { background-image: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); }
-.attraction-card:nth-child(8)  { background-image: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); }
+.attraction-card:nth-child(7)  { background-image: linear-gradient(135deg, #2a2a0d 0%, #1a1a05 100%); }
+.attraction-card:nth-child(8)  { background-image: linear-gradient(135deg, #0d1a2a 0%, #050d1a 100%); }
 .attraction-card:nth-child(9)  { background-image: linear-gradient(135deg, #2a200d 0%, #1a1205 100%); }
-.attraction-card:nth-child(10) { background-image: linear-gradient(135deg, #1a0d2a 0%, #0d051a 100%); }
+.attraction-card:nth-child(10) { background-image: linear-gradient(135deg, #1a0a2a 0%, #0d0518 100%); }
 .attraction-card:nth-child(11) { background-image: linear-gradient(135deg, #0d2a1a 0%, #051a0d 100%); }
-.attraction-card:nth-child(12) { background-image: linear-gradient(135deg, #2a1a0d 0%, #1a0d05 100%); }
+.attraction-card:nth-child(12) { background-image: linear-gradient(135deg, #2a0d1a 0%, #1a0510 100%); }
 
 .attraction-card:hover {
   transform: translateY(-8px);
